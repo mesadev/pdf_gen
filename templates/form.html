@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบฟอร์มรวม</title>
+</head>
+<body>
+  <h2>แบบฟอร์มกรอกข้อมูล</h2>
+  <form method="post" action="/generate-pdf">
+    <h3>ข้อมูลผู้ลงนาม</h3>
+    <label>ชื่อผู้ลงนาม:</label>
+    <input type="text" name="name" value="นายสมชาย ใจดี"><br>
+    <label>ตำแหน่ง:</label>
+    <input type="text" name="position" value="ประธานกรรมการ"><br>
+    <label>เบอร์โทรศัพท์:</label>
+    <input type="text" name="phone" value="0812345678"><br>
+    <label>ชื่อกองทุน:</label>
+    <input type="text" name="fund_name" value="กองทุนหมู่บ้านตัวอย่าง"><br>
+    <label>หมู่ที่:</label>
+    <input type="text" name="moo" value="5"><br>
+    <label>ตำบล:</label>
+    <input type="text" name="subdistrict" value="ตำบลยิ้มแย้ม"><br>
+    <label>อำเภอ:</label>
+    <input type="text" name="district" value="อำเภอเมือง"><br>
+    <label>จังหวัด:</label>
+    <input type="text" name="province" value="กรุงเทพมหานคร"><br>
+    <label>บ้านเลขที่:</label>
+    <input type="text" name="house_number" value="99/1"><br>
+    <label>ซอย:</label>
+    <input type="text" name="soi" value="สุขใจ 1"><br>
+    <label>หมู่บ้าน:</label>
+    <input type="text" name="village" value="หมู่บ้านแสนสุข"><br>
+    <label>ถนน:</label>
+    <input type="text" name="road" value="สุขาภิบาล 5"><br>
+
+    <label>วันที่ออกเอกสาร (yyyy-mm-dd):</label>
+    <input type="date" name="date" value="2025-05-17"><br>
+    <label>วันที่ประชาคม (yyyy-mm-dd):</label>
+    <input type="date" name="community_date" value="2025-05-10"><br>
+
+    <!-- <h3>ข้อมูลโครงการ (คสศ02)</h3> -->
+    <label>ชื่อโครงการ:</label>
+    <select name="project1">
+      <option value="โซล่าเซลล์ลดค่าใช้จ่าย ร้านค้าชุมชน ประปาหมู่บ้าน ส่วนกลางชุมชน" selected>โซล่าเซลล์ลดค่าใช้จ่าย ร้านค้าชุมชน ประปาหมู่บ้าน ส่วนกลางชุมชน</option>
+      <option value="โซล่าร์เซลล์ชุมชน เพื่อประหยัดพลังงานด้วยพลังงานทดแทน">โซล่าร์เซลล์ชุมชน เพื่อประหยัดพลังงานด้วยพลังงานทดแทน</option>
+      <option value="โซล่าร์เซลล์ พลังงานสะอาด เพื่อชุมชนยั่งยืน">โซล่าร์เซลล์ พลังงานสะอาด เพื่อชุมชนยั่งยืน</option>
+      <option value="โซล่าร์เซลล์ เพื่อลดค่าใช้จ่าย และสร้างอาชีพเพิ่มทักษะให้ชุมชน">โซล่าร์เซลล์ เพื่อลดค่าใช้จ่าย และสร้างอาชีพเพิ่มทักษะให้ชุมชน</option>
+    </select><br>
+    <label>งบประมาณโครงการ (บาท):</label>
+    <select name="budget1" required>
+      <option value="200000.00">200,000.00</option>
+      <option value="300000.00">300,000.00</option>
+      <option value="400000.00">400,000.00</option>
+    </select><br>
+<!-- 
+    <h3>ข้อมูลประชาคม (คสศ03)</h3>
+
+<label>ณ สถานที่:</label>
+<input type="text" name="location" value="ศาลาประชาคม"><br>
+
+<label>เวลาเริ่มประชุม:</label>
+<input type="text" name="meeting_time" value="09.00"><br>
+
+<label>วันที่ประชุม (yyyy-mm-dd):</label>
+<input type="date" name="report_date" value="2025-05-01"><br>
+
+<label>จำนวนประชากรทั้งหมด:</label>
+<input type="text" name="total_people" value="100"><br>
+
+<label>จำนวนครัวเรือน:</label>
+<input type="text" name="total_households" value="50"><br>
+
+<label>ผู้แทนครัวเรือนที่เข้าร่วมประชุม:</label>
+<input type="text" name="attending_representatives" value="45"><br>
+
+<label>ชาย:</label>
+<input type="text" name="male_representatives" value="20"><br>
+
+<label>หญิง:</label>
+<input type="text" name="female_representatives" value="25"><br>
+
+<label>จำนวนสมาชิกกองทุนทั้งหมด:</label>
+<input type="text" name="total_members" value="60"><br>
+
+<label>สมาชิกที่เข้าร่วมประชุม:</label>
+<input type="text" name="attending_members" value="30"><br>
+
+<label>ชาย (สมาชิก):</label>
+<input type="text" name="male_members" value="15"><br>
+
+<label>หญิง (สมาชิก):</label>
+<input type="text" name="female_members" value="15"><br>
+
+<label>กรรมการที่เข้าร่วมประชุม:</label>
+<input type="text" name="total_committee" value="10"><br>
+-->
+
+    <br><button type="submit">สร้าง PDF</button> 
+  </form>
+</body>
+</html>

@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+jinja2
+reportlab
+PyPDF2
+pandas

@@ -4,3 +4,4 @@ jinja2
 reportlab
 PyPDF2
 pandas
+python-multipart
